@@ -1,0 +1,31 @@
+{
+  "name": "03-api-solid",
+  "version": "1.0.0",
+  "description": "GymPass style app.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build/server.js",
+    "start:dev": "tsx watch src/server.ts",
+    "build": "tsup src --out-dir build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanyelC/ignite-nodejs-03-api-solid.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hanyelC/ignite-nodejs-03-api-solid/issues"
+  },
+  "homepage": "https://github.com/hanyelC/ignite-nodejs-03-api-solid#readme",
+  "dependencies": {
+    "fastify": "^4.14.1",
+    "tsup": "^6.6.3",
+    "tsx": "^3.12.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.6",
+    "typescript": "^4.9.5"
+  }
+}
