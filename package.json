@@ -20,9 +20,11 @@
   },
   "homepage": "https://github.com/hanyelC/ignite-nodejs-03-api-solid#readme",
   "dependencies": {
+    "dotenv": "16.0.3",
     "fastify": "4.14.1",
     "tsup": "6.6.3",
-    "tsx": "3.12.3"
+    "tsx": "3.12.3",
+    "zod": "3.21.4"
   },
   "devDependencies": {
     "@types/node": "18.14.6",
