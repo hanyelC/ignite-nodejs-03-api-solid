@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/hanyelC/ignite-nodejs-03-api-solid#readme",
   "dependencies": {
+    "@prisma/client": "4.11.0",
     "dotenv": "16.0.3",
     "fastify": "4.14.1",
     "tsup": "6.6.3",
@@ -33,6 +34,7 @@
     "@typescript-eslint/eslint-plugin": "5.54.1",
     "@typescript-eslint/parser": "5.54.1",
     "eslint": "8.35.0",
+    "prisma": "4.11.0",
     "typescript": "4.9.5"
   }
 }
