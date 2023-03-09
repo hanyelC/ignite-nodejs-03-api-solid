@@ -1,0 +1,84 @@
+_type: export
+__export_format: 4
+__export_date: 2023-03-09T19:24:16.239Z
+__export_source: insomnia.desktop.app:v2022.5.1
+resources:
+  - _id: req_d2021f1889174e31aafb411362708df4
+    parentId: wrk_eceba2d1ba684b8a8b9f54a079466f93
+    modified: 1678389670445
+    created: 1678389552642
+    url: "{{ _.url }}/users"
+    name: Create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Nome qualquer",
+        	"email": "email@email.com",
+        	"password": "123456"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_f75f8f166848456c8ec57063fba2c1d8
+    authentication: {}
+    metaSortKey: -1678389552642
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_eceba2d1ba684b8a8b9f54a079466f93
+    parentId: null
+    modified: 1678389550309
+    created: 1678389550309
+    name: Ignite Node - Aula 03
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: env_abe5f0af6d0a29de21f84820713f71e6b623c8f2
+    parentId: wrk_eceba2d1ba684b8a8b9f54a079466f93
+    modified: 1678389558622
+    created: 1678389550318
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: {}
+    color: null
+    isPrivate: false
+    metaSortKey: 1678389550318
+    _type: environment
+  - _id: jar_abe5f0af6d0a29de21f84820713f71e6b623c8f2
+    parentId: wrk_eceba2d1ba684b8a8b9f54a079466f93
+    modified: 1678389550321
+    created: 1678389550321
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_4a132079d782400ea4932eb1aed1331f
+    parentId: wrk_eceba2d1ba684b8a8b9f54a079466f93
+    modified: 1678389550311
+    created: 1678389550311
+    fileName: Ignite Node - Aula 03
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_08a1de372cd34104892915f7357ee8b9
+    parentId: env_abe5f0af6d0a29de21f84820713f71e6b623c8f2
+    modified: 1678389573879
+    created: 1678389559873
+    name: DEV
+    data:
+      url: http://localhost:3333
+    dataPropertyOrder:
+      "&":
+        - url
+    color: null
+    isPrivate: false
+    metaSortKey: 1678389559873
+    _type: environment
