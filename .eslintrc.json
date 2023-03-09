@@ -18,6 +18,11 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "no-multiple-empty-lines": ["error", {
+          "maxEOF": 0,
+          "max": 1,
+          "maxBOF": 0
+        }],
         "indent": [
             "error",
             2
