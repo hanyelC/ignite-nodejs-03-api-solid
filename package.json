@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node build/server.js",
     "start:dev": "tsx watch src/server.ts",
+    "services:up": "docker compose up -d",
+    "services:stop": "docker compose stop",
     "build": "tsup src --out-dir build",
     "lint": "eslint src --ext .ts",
     "lint:fix": "npm run lint -- --fix"
