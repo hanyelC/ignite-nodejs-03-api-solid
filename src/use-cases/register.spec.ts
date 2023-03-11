@@ -1,16 +1,22 @@
 import { compare } from 'bcrypt'
-import { describe, expect, test } from 'vitest'
+import { beforeEach, describe, expect, test } from 'vitest'
 
 import { InMemoryUsersRepository } from '@/repositories/inMemory/inMemory-users.repository'
+import { UsersRepository } from '@/repositories/users.repository'
 import { UserAlreadyExistsError } from '@/use-cases/errors/UserAlreadyExists.error'
 import { RegisterUseCase } from '@/use-cases/register'
 
 describe('Register Use Case', () => {
-  test('should be able to register', async () => {
-    const usersRepository = new InMemoryUsersRepository()
-    const registerUseCase = new RegisterUseCase(usersRepository)
+  let usersRepository: UsersRepository
+  let sut: RegisterUseCase
 
-    const { user } = await registerUseCase.execute({
+  beforeEach(() => {
+    usersRepository = new InMemoryUsersRepository()
+    sut = new RegisterUseCase(usersRepository)
+  })
+
+  test('should be able to register', async () => {
+    const { user } = await sut.execute({
       name: 'John Doe',
       email: 'johndoe@example.com',
       password: '123456',
@@ -20,10 +26,7 @@ describe('Register Use Case', () => {
   })
 
   test('should hash user password upon registration', async () => {
-    const usersRepository = new InMemoryUsersRepository()
-    const registerUseCase = new RegisterUseCase(usersRepository)
-
-    const { user } = await registerUseCase.execute({
+    const { user } = await sut.execute({
       name: 'John Doe',
       email: 'johndoe@example.com',
       password: '123456',
@@ -38,18 +41,15 @@ describe('Register Use Case', () => {
   })
 
   test('should not be able to register with same email twice', async () => {
-    const usersRepository = new InMemoryUsersRepository()
-    const registerUseCase = new RegisterUseCase(usersRepository)
-
     const userData = {
       name: 'John Doe',
       email: 'johndoe@example.com',
       password: '123456',
     }
 
-    await registerUseCase.execute(userData)
+    await sut.execute(userData)
 
-    await expect(() => registerUseCase.execute(userData))
+    await expect(() => sut.execute(userData))
       .rejects
       .toBeInstanceOf(UserAlreadyExistsError)
   })
