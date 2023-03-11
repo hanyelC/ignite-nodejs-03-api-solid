@@ -18,6 +18,12 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "no-multi-spaces": ["error", {
+          "ignoreEOLComments": true
+        }],
+        "key-spacing": ["error", {
+          "align": "value"
+        }],
         "no-multiple-empty-lines": ["error", {
           "maxEOF": 0,
           "max": 1,

@@ -17,13 +17,13 @@ describe('Authenticate Use Case', () => {
 
   test('should be able to authenticate', async () => {
     await usersRepository.create({
-      name: 'John Doe',
-      email: 'johndoe@example.com',
+      name:          'John Doe',
+      email:         'johndoe@example.com',
       password_hash: await hash('123456', 6),
     })
 
     const { user } = await sut.execute({
-      email: 'johndoe@example.com',
+      email:    'johndoe@example.com',
       password: '123456',
     })
 
@@ -33,7 +33,7 @@ describe('Authenticate Use Case', () => {
   test('should not be able to authenticate with wrong email', async () => {
     await expect(() =>
       sut.execute({
-        email: 'johndoe@example.com',
+        email:    'johndoe@example.com',
         password: '123456',
       }),
     ).rejects.toBeInstanceOf(InvalidCredentialsError)
@@ -41,14 +41,14 @@ describe('Authenticate Use Case', () => {
 
   test('should not be able to authenticate with wrong email', async () => {
     await usersRepository.create({
-      name: 'John Doe',
-      email: 'johndoe@example.com',
+      name:          'John Doe',
+      email:         'johndoe@example.com',
       password_hash: await hash('123456', 6),
     })
 
     await expect(() =>
       sut.execute({
-        email: 'johndoe@example.com',
+        email:    'johndoe@example.com',
         password: '123123',
       }),
     ).rejects.toBeInstanceOf(InvalidCredentialsError)
