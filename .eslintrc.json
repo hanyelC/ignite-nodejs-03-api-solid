@@ -15,11 +15,16 @@
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "align-import"
     ],
     "rules": {
+        "align-import/align-import": "error",
         "no-multi-spaces": ["error", {
-          "ignoreEOLComments": true
+          "ignoreEOLComments": true,
+          "exceptions": {
+            "ImportDeclaration": true
+          }
         }],
         "key-spacing": ["error", {
           "align": "value"

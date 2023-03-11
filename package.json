@@ -44,6 +44,7 @@
     "@vitest/coverage-c8": "0.29.2",
     "@vitest/ui": "0.29.2",
     "eslint": "8.35.0",
+    "eslint-plugin-align-import": "1.0.0",
     "prisma": "4.11.0",
     "typescript": "4.9.5",
     "vite-tsconfig-paths": "4.0.5",

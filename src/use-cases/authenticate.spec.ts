@@ -1,9 +1,9 @@
-import { hash } from 'bcrypt'
+import { hash }                               from 'bcrypt'
 import { beforeEach, describe, expect, test } from 'vitest'
 
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users.repository'
-import { UsersRepository } from '@/repositories/users.repository'
-import { AuthenticateUseCase } from '@/use-cases/authenticate'
+import { UsersRepository }         from '@/repositories/users.repository'
+import { AuthenticateUseCase }     from '@/use-cases/authenticate'
 import { InvalidCredentialsError } from '@/use-cases/errors/invalid-credentials.error'
 
 describe('Authenticate Use Case', () => {

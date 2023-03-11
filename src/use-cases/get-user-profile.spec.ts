@@ -1,10 +1,10 @@
-import { hash } from 'bcrypt'
+import { hash }                               from 'bcrypt'
 import { beforeEach, describe, expect, test } from 'vitest'
 
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users.repository'
-import { UsersRepository } from '@/repositories/users.repository'
-import { ResourceNotFoundError } from '@/use-cases/errors/resource-not-found.error'
-import { GetUserProfileUseCase } from '@/use-cases/get-user-profile'
+import { UsersRepository }         from '@/repositories/users.repository'
+import { ResourceNotFoundError }   from '@/use-cases/errors/resource-not-found.error'
+import { GetUserProfileUseCase }   from '@/use-cases/get-user-profile'
 
 describe('Get user profile Use Case', () => {
   let usersRepository: UsersRepository

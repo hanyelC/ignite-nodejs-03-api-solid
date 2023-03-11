@@ -1,10 +1,10 @@
-import { compare } from 'bcrypt'
+import { compare }                            from 'bcrypt'
 import { beforeEach, describe, expect, test } from 'vitest'
 
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users.repository'
-import { UsersRepository } from '@/repositories/users.repository'
-import { UserAlreadyExistsError } from '@/use-cases/errors/user-already-exists.error'
-import { RegisterUseCase } from '@/use-cases/register'
+import { UsersRepository }         from '@/repositories/users.repository'
+import { UserAlreadyExistsError }  from '@/use-cases/errors/user-already-exists.error'
+import { RegisterUseCase }         from '@/use-cases/register'
 
 describe('Register Use Case', () => {
   let usersRepository: UsersRepository

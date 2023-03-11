@@ -1,5 +1,5 @@
 import { CheckIn, Prisma } from '@prisma/client'
-import { randomUUID } from 'node:crypto'
+import { randomUUID }      from 'node:crypto'
 
 import { CheckInsRepository } from '@/repositories/check-ins.repository'
 
