@@ -12,3 +12,6 @@ build
 
 # Editor
 .vscode/*
+
+# Tests
+coverage
