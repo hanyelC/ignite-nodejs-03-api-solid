@@ -1,11 +1,49 @@
 _type: export
 __export_format: 4
-__export_date: 2023-03-09T19:24:16.239Z
+__export_date: 2023-03-11T12:19:32.511Z
 __export_source: insomnia.desktop.app:v2022.5.1
 resources:
+  - _id: req_8b8b10b8d99247ccafc818add8c16f31
+    parentId: wrk_eceba2d1ba684b8a8b9f54a079466f93
+    modified: 1678537100324
+    created: 1678536971471
+    url: "{{ _.url }}/sessions"
+    name: Authenticate
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "fooasds@emsail.com",
+        	"password": "123456"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_1080093931144516b48edf0a2cff9b74
+    authentication: {}
+    metaSortKey: -1678536971471
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_eceba2d1ba684b8a8b9f54a079466f93
+    parentId: null
+    modified: 1678389550309
+    created: 1678389550309
+    name: Ignite Node - Aula 03
+    description: ""
+    scope: collection
+    _type: workspace
   - _id: req_d2021f1889174e31aafb411362708df4
     parentId: wrk_eceba2d1ba684b8a8b9f54a079466f93
-    modified: 1678389670445
+    modified: 1678537094109
     created: 1678389552642
     url: "{{ _.url }}/users"
     name: Create
@@ -16,7 +54,7 @@ resources:
       text: |-
         {
         	"name": "Nome qualquer",
-        	"email": "email@email.com",
+        	"email": "fooasds@emsail.com",
         	"password": "123456"
         }
     parameters: []
@@ -34,14 +72,6 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: wrk_eceba2d1ba684b8a8b9f54a079466f93
-    parentId: null
-    modified: 1678389550309
-    created: 1678389550309
-    name: Ignite Node - Aula 03
-    description: ""
-    scope: collection
-    _type: workspace
   - _id: env_abe5f0af6d0a29de21f84820713f71e6b623c8f2
     parentId: wrk_eceba2d1ba684b8a8b9f54a079466f93
     modified: 1678389558622
