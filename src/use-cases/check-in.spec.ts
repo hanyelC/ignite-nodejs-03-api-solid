@@ -4,6 +4,8 @@ import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins.repository'
 import { InMemoryGymsRepository }     from '@/repositories/in-memory/in-memory-gyms.repository'
 import { CheckInUseCase }             from '@/use-cases/check-in'
+import { MaxDistanceError }           from '@/use-cases/errors/max-distance.error'
+import { MaxNumberOfCheckInsError }   from '@/use-cases/errors/max-number-of-check-ins.error'
 
 describe('Check-in Use Case', () => {
   let checkInsRepository: InMemoryCheckInsRepository
@@ -56,7 +58,7 @@ describe('Check-in Use Case', () => {
 
     await expect(() => sut.execute(checkInData))
       .rejects
-      .toBeInstanceOf(Error)
+      .toBeInstanceOf(MaxNumberOfCheckInsError)
   })
 
   test('should be able to check in twice in different days', async () => {
@@ -87,6 +89,6 @@ describe('Check-in Use Case', () => {
         userLongitude: -40.836260
       }),
 
-    ).rejects.toBeInstanceOf(Error)
+    ).rejects.toBeInstanceOf(MaxDistanceError)
   })
 })
