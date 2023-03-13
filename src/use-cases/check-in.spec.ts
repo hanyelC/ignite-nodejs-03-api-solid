@@ -52,10 +52,10 @@ describe('Check-in Use Case', () => {
 
     await sut.execute(checkInData)
 
-    vi.setSystemTime(new Date(2023, 0, 1, 11, 0))
+    vi.setSystemTime(new Date(2023, 0, 2, 11, 0))
 
     const { checkIn } = await sut.execute(checkInData)
 
-    expect(checkIn.id).toBe(expect.any(String))
+    expect(checkIn.id).toEqual(expect.any(String))
   })
 })
