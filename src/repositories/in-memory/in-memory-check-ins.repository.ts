@@ -11,6 +11,30 @@ export class InMemoryCheckInsRepository implements CheckInsRepository {
     return this.items.filter((checkIn) => checkIn.user_id === userId).length
   }
 
+  async create(data: Prisma.CheckInUncheckedCreateInput) {
+    const checkIn: CheckIn = {
+      id:           randomUUID(),
+      created_at:   new Date(),
+      gym_id:       data.gym_id,
+      user_id:      data.user_id,
+      validated_at: data.validated_at ? new Date(data.validated_at) : null
+    }
+
+    this.items.push(checkIn)
+
+    return structuredClone(checkIn)
+  }
+
+  async findById(id: string) {
+    const checkIn = this.items.find((item) => item.id === id)
+
+    if (!checkIn) {
+      return null
+    }
+
+    return structuredClone(checkIn)
+  }
+
   async findManyByUserId(userId: string, page: number) {
     return this.items
       .filter((checkIn) => checkIn.user_id === userId)
@@ -33,19 +57,15 @@ export class InMemoryCheckInsRepository implements CheckInsRepository {
       return null
     }
 
-    return checkInOnSameDate
+    return structuredClone(checkInOnSameDate)
   }
 
-  async create(data: Prisma.CheckInUncheckedCreateInput) {
-    const checkIn: CheckIn = {
-      id:           randomUUID(),
-      created_at:   new Date(),
-      gym_id:       data.gym_id,
-      user_id:      data.user_id,
-      validated_at: data.validated_at ? new Date(data.validated_at) : null
-    }
+  async save(checkIn: CheckIn) {
+    const checkInIndex = this.items.findIndex((item) => item.id === checkIn.id)
 
-    this.items.push(checkIn)
+    if (checkInIndex >= 0) {
+      this.items[checkInIndex] = checkIn
+    }
 
     return checkIn
   }
