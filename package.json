@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/hanyelC/ignite-nodejs-03-api-solid#readme",
   "dependencies": {
+    "@fastify/jwt": "6.7.0",
     "@prisma/client": "4.11.0",
     "bcrypt": "5.1.0",
     "dayjs": "1.11.7",
